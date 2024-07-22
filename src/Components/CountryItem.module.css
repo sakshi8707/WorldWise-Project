@@ -1,0 +1,43 @@
+/* .countryItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+
+  font-size: 1.7rem;
+  font-weight: 600;
+
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  border-left: 5px solid var(--color-brand--1);
+}
+
+.countryItem img {
+  line-height: 1;
+}
+
+.countryItem .name {
+  font-size: 1.7rem;
+} */
+
+/* ------------------------------Previous code------------------------------------ */
+
+.countryItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+
+  font-size: 1.7rem;
+  font-weight: 600;
+
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  border-left: 5px solid var(--color-brand--1);
+}
+
+.countryItem span:first-child {
+  line-height: 1;
+}
