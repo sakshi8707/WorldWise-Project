@@ -3,9 +3,10 @@ import React from "react";
 import Spinner from "./Spinner";
 import CityItem from "./CityItem";
 import Message from "./Message";
-// import cstyle from "./CityItem.module.css";
+import { useCities } from "../Contexts/CitiesContext";
 
-function CityList({ cities, isLoading }) {
+function CityList() {
+  const { cities, isLoading } = useCities();
   if (isLoading) {
     return <Spinner />;
   }
