@@ -5,3 +5,14 @@
   display: flex;
   position: relative;
 }
+
+.appLayout {
+  display: flex;
+}
+
+.mapContainer {
+  flex: 2;
+  /* height: 54vh;  */
+  height: 100%;
+  /* margin-left: 2px; Adjust according to sidebar width */
+}
