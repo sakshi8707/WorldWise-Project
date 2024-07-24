@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
+import { useCities } from "../Contexts/CitiesContext";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -21,12 +22,18 @@ const flagemojiToPNG = (flag) => {
 
 function CityItem({ city }) {
   const { cityName, emoji, date, id, position } = city;
-  // console.log();
+  const { latestVisitedCity } = useCities();
+
+  const isActive = latestVisitedCity && latestVisitedCity.id === city.id;
+
   return (
-    <li className={styles.cityItemWrapper}>
+    <li
+      className={`${styles.cityItemWrapper} ${
+        isActive ? styles.cityItemActive : ""
+      }`}
+    >
       <Link
-          className={styles.cityItem}
-          // to={`/${id}?lat=${position.lat}&lng=${position.lng}`}
+        className={styles.cityItem}
         to={`/app/cities/${id}?lat=${position.lat}&lng=${position.lng}`}
       >
         <span className={styles.emoji}>{flagemojiToPNG(emoji)}</span>
