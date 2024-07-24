@@ -11,6 +11,7 @@ import CountryList from "./Components/CountryList.jsx";
 import Form from "./Components/Form";
 import Map from "./Components/Map";
 import { CitiesProvider } from "./Contexts/CitiesContext.jsx";
+import "leaflet/dist/leaflet.css";
 
 function App() {
   return (
