@@ -22,22 +22,3 @@ const CountryItem = ({ country }) => {
 
 export default CountryItem;
 
-
-
-// ---------------------------Previous code -------------------------------
-
-// import React from "react";
-// import styles from "./CountryItem.module.css";
-
-// const CountryItem = ({ country }) => {
-//   const { cityName, emoji } = country;
-
-//   return (
-//     <li className={styles.cityItem}>
-//       <span className={styles.emoji}>{emoji}</span>
-//       <span className={styles.name}>{cityName}</span>
-//     </li>
-//   );
-// };
-
-// export default CountryItem;
