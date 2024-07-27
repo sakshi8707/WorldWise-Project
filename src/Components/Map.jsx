@@ -1,6 +1,12 @@
-import { useSearchParams } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMapEvents,
+} from "react-leaflet";
+import { useNavigate } from "react-router-dom";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./Map.module.css";
@@ -16,30 +22,29 @@ const DefaultIcon = L.icon({
   iconRetinaUrl: markerIcon2x,
   shadowUrl: markerShadow,
   iconSize: [25, 41],
-  iconAnchor: [12, 41],                                                                
+  iconAnchor: [12, 41],
   popupAnchor: [1, -34],
   shadowSize: [41, 41],
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-function Map() {
-  const [searchParams] = useSearchParams();
-  const [mapPosition, setMapPosition] = useState([40, 0]); // New York City coordinates
+function Map({ cities }) {
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const lat = searchParams.get("lat");
-    const lng = searchParams.get("lng");
-    if (lat && lng) {
-      setMapPosition([parseFloat(lat), parseFloat(lng)]);
-    }
-  }, [searchParams]);
+    console.log("Cities data:", cities);
+  }, [cities]);
+
+  const handleMarkerClick = (city) => {
+    navigate(`/app/cities/${city.id}`);
+  };
 
   return (
     <div className={styles.mapContainer}>
       <MapContainer
-        center={mapPosition}
-        zoom={13}
+        center={[20, 0]} // Adjust default coordinates if necessary
+        zoom={2}
         scrollWheelZoom={true}
         className={styles.map}
       >
@@ -47,14 +52,37 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
-        <Marker position={mapPosition}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+
+        {cities &&
+          cities.map((city) => (
+            <Marker
+              key={city.id}
+              position={[city.position.lat, city.position.lng]}
+              eventHandlers={{
+                click: () => handleMarkerClick(city),
+              }}
+            >
+              <Popup>
+                <strong>{city.cityName}</strong>
+                <br />
+                {city.emoji || "No notes available."}
+              </Popup>
+            </Marker>
+          ))}
+
+        <DetectClick />
       </MapContainer>
     </div>
   );
+}
+
+function DetectClick() {
+  const navigate = useNavigate();
+  useMapEvents({
+    click: (e) => {
+      navigate(`/app/form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+    },
+  });
 }
 
 export default Map;
