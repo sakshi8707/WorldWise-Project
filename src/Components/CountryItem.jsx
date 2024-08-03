@@ -21,4 +21,3 @@ const CountryItem = ({ country }) => {
 };
 
 export default CountryItem;
-
