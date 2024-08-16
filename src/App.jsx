@@ -12,9 +12,12 @@ import Form from "./Components/Form";
 import Map from "./Components/Map";
 import { CitiesProvider } from "./Contexts/CitiesContext.jsx";
 import "leaflet/dist/leaflet.css";
+import { AuthProvider } from "./Contexts/FakeAuthContext.jsx";
+
 
 function App() {
   return (
+      <AuthProvider>
     <CitiesProvider>
       <BrowserRouter>
         <Routes>
@@ -34,6 +37,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </CitiesProvider>
+      </AuthProvider>
   );
 }
 
