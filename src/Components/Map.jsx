@@ -16,8 +16,9 @@ import Button from "./Button.jsx";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
-import { useGeolocation } from "../Hooks/useGeolocation";
-import {useUrlPosition} from "../Hooks/useUrlPosition.js";
+import { useGeolocation } from "../Hooks/useGeolocation.js";
+import { useUrlPosition } from "../Hooks/useUrlPosition.js";
+
 
 const DefaultIcon = L.icon({
   iconUrl: markerIcon,
