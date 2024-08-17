@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/51fbde6a-b72a-49ac-91e7-b5717c9e7e07)
+
 # WorldWise
 
 WorldWise is a React.js application that provides city-related data and a map interface using Leaflet.js. The app is integrated with Firebase for deployment and includes various features like user authentication, Google OAuth, and a responsive design with a carousel and Context Api's
