@@ -33,9 +33,12 @@ WorldWise is a city management application built with React and Leaflet.js for v
 
 Here are some screenshots of the project:
 
-<img src="https://github.com/user-attachments/assets/bc3b6f20-ddc8-417f-aa45-9c0ed065ab59" alt="cityitem" width="400"/>
-<img src="https://github.com/user-attachments/assets/e9375277-d620-4c1e-9c8b-9bc22b7125b6" alt="loginPage" width="400"/>
-<img src="https://github.com/user-attachments/assets/4d5a583e-2607-42f4-bda6-5b185b5b2276" alt="signupPage" width="400"/>
+<img src="]https://github.com/user-attachments/assets/84e789a9-ee81-49ab-a235-555ac692765f" alt="cityitem" width="400"/>
+<img src="https://github.com/user-attachments/assets/f9ecaaf5-e99e-4854-a318-2b0104bde4ad" alt="loginPage" width="400"/>
+<img src="https://github.com/user-attachments/assets/f2674b42-d06f-4252-bbf8-dd41807ee97b" alt="FormPage" width="400"/>
+<img src="https://github.com/user-attachments/assets/ea515fc3-1218-4adb-82aa-7f9739400e79" alt="SignupPage" width="400"/>
+
+
 
 
 
