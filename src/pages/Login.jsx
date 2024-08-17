@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
 import PageNav from "../Components/PageNav";
 import { useAuth } from "../Contexts/FakeAuthContext";
 import styles from "./Login.module.css";
 
 export default function Login() {
-  // PRE-FILL FOR DEV PURPOSES
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("Sakshi@99");
 
@@ -15,21 +14,16 @@ export default function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     if (email && password) login(email, password);
   }
 
-  useEffect(
-    function () {
-      if (isAuthenticated) navigate("/app", { replace: true });
-    },
-    [isAuthenticated, navigate]
-  );
+  useEffect(() => {
+    if (isAuthenticated) navigate("/app", { replace: true });
+  }, [isAuthenticated, navigate]);
 
   return (
     <main className={styles.login}>
       <PageNav />
-
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
@@ -40,7 +34,6 @@ export default function Login() {
             value={email}
           />
         </div>
-
         <div className={styles.row}>
           <label htmlFor="password">Password</label>
           <input
@@ -50,9 +43,16 @@ export default function Login() {
             value={password}
           />
         </div>
-
-        <div>
+        <div className={styles.btnn}>
           <Button type="primary">Login</Button>
+        </div>
+        <div className={styles.signUp}>
+          <p>
+            Don't have an account?{" "}
+            <Link to="/signup" className={styles.signUpLink}>
+              Sign Up
+            </Link>
+          </p>
         </div>
       </form>
     </main>
