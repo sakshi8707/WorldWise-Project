@@ -1,7 +1,7 @@
 
 # WorldWise
 
-WorldWise is a React.js application that provides city-related data and a map interface using Leaflet.js. The app is integrated with Firebase for deployment and uses several React features and contexts.
+WorldWise is a React.js application that provides city-related data and a map interface using Leaflet.js. The app is integrated with Firebase for deployment and includes various features like user authentication, Google OAuth, and a responsive design with a carousel and Context Api's
 
 ## Table of Contents
 
@@ -16,23 +16,26 @@ WorldWise is a React.js application that provides city-related data and a map in
 
 ## Project Overview
 
-WorldWise is a city management application built with React and Leaflet.js for visualizing cities on a map. Users can log in, sign up, view city lists, and explore cities on an interactive map. The app is deployed using Firebase Hosting.
+WorldWise is a city management application built with React and Leaflet.js for visualizing cities on a map. Users can log in, sign up, view city lists, and explore cities on an interactive map. The app includes additional features like tracking, adding notes, and managing dates.
 
 ## Features
 
 - Interactive map using Leaflet.js.
 - City and country management.
 - User authentication with login and sign-up features.
-- Firebase Hosting deployment.
 - Integration with Google OAuth for Google Sign-In.
 - Responsive design with a carousel feature.
-- (add more features like users can track , add notes and change date or add future date as well , mention pricing and product section as well)
+- Separate sections for Pricing and Products.
+- Users can track cities, add notes, and manage dates.
+- Firebase Hosting deployment.    
 
-#images 
+## Images
 
-![cityitem](https://github.com/user-attachments/assets/bc3b6f20-ddc8-417f-aa45-9c0ed065ab59)
-![loginPage](https://github.com/user-attachments/assets/e9375277-d620-4c1e-9c8b-9bc22b7125b6)  ![signupPage](https://github.com/user-attachments/assets/4d5a583e-2607-42f4-bda6-5b185b5b2276)
+Here are some screenshots of the project:
 
+<img src="https://github.com/user-attachments/assets/bc3b6f20-ddc8-417f-aa45-9c0ed065ab59" alt="cityitem" width="400"/>
+<img src="https://github.com/user-attachments/assets/e9375277-d620-4c1e-9c8b-9bc22b7125b6" alt="loginPage" width="400"/>
+<img src="https://github.com/user-attachments/assets/4d5a583e-2607-42f4-bda6-5b185b5b2276" alt="signupPage" width="400"/>
 
 
 
@@ -78,9 +81,21 @@ To run this project locally, follow these steps:
 - **Leaflet.js**: Library for interactive maps.
 - **Firebase**: Hosting for deploying the application.
 - **React Router**: For routing between different pages.
+- **APIs**:
+      Google Maps API: (Assuming you used this for map data)
+      City and Country Data API: (Describe the specific API used to fetch city and country data)
+      Authentication API: For handling user authentication.
+  
 - **CSS Modules**: For styling components.
 - **Google OAuth**: For Google Sign-In integration.
 - **Vite**: For fast development and building process
+- **React Hooks**:
+
+    useState: For managing local state in functional components.
+    useEffect: For handling side effects in functional components.
+    useNavigate: From React Router, used to programmatically navigate between routes.
+    useContext: For accessing context values like authentication and city data.
+    useCities: A custom hook created to manage and access city-related data.
 
 - (in technologies add apis as well )
 
