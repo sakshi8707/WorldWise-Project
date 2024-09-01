@@ -32,3 +32,32 @@
 .product section a {
   margin-top: 2rem;
 }
+
+/* ------------Carousel styling---------- */
+
+.customArrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.customArrow img {
+  width: 0rem; /* Adjust size as needed */
+  height: auto;
+  fill: var(--color-dark--2);
+}
+
+.next {
+  right: 1rem; 
+  width: 4rem;
+}
+
+.prev {
+  left: 1rem; 
+  width: 4rem;
+}
+
