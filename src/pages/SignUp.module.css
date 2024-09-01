@@ -2,7 +2,7 @@
   margin: 2.5rem;
   padding: 2.5rem 5rem;
   background-color: var(--color-dark--1);
-  /* background: red; */
+ 
   min-height: calc(100vh - 5rem);
   margin-block-end: 2rem;
 }
@@ -28,7 +28,7 @@
 .btnn{
     display: flex;
   justify-content: center;
-  /* margin-block-end: 5rem; */
+  
 }
 
 
