@@ -1,6 +1,6 @@
-// Uses the same styles as Product
 import styles from "./Product.module.css";
 import PageNav from "../Components/PageNav";
+import Button from "../Components/Button"; // Import the Button component
 
 export default function Product() {
   return (
@@ -18,6 +18,8 @@ export default function Product() {
             labore mollitia iusto. Recusandae quos provident, laboriosam fugit
             voluptatem iste.
           </p>
+          <Button type="primary">Buy now  $20    </Button>{" "}
+          
         </div>
         <img src="/img-2.jpg" alt="overview of a large city with skyscrapers" />
       </section>
