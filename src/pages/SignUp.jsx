@@ -1,29 +1,51 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import Button from "../Components/Button";
 import PageNav from "../Components/PageNav";
 import { useAuth } from "../Contexts/FakeAuthContext";
 import styles from "./SignUp.module.css";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import axios from "axios";
 
 export default function SignUp() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
 
-  const { signUp } = useAuth();
+  const { signUp, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (email && password && phone) signUp(email, password, phone);
+    if (name && email && password) {
+      signUp(email, password);
+
+      axios
+        .post("http://localhost:3001/signup", { name, email, password }, { withCredentials: true }  )
+        .then((result) => console.log(result))
+        .catch((err) => console.log(err));
+    }
   }
+
+  useEffect(() => {
+    if (isAuthenticated) navigate("/app", { replace: true });
+  }, [isAuthenticated, navigate]);
 
   return (
     <main className={styles.signup}>
       <PageNav />
       <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.row}>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
+        </div>
         <div className={styles.row}>
           <label htmlFor="email">Email address</label>
           <input
@@ -42,15 +64,6 @@ export default function SignUp() {
             value={password}
           />
         </div>
-        <div className={styles.row}>
-          <label htmlFor="phone">Phone number</label>
-          <input
-            type="text"
-            id="phone"
-            onChange={(e) => setPhone(e.target.value)}
-            value={phone}
-          />
-        </div>
         <div className={styles.btnn}>
           <Button type="primary">Sign Up</Button>
         </div>
@@ -67,7 +80,6 @@ export default function SignUp() {
               console.log("Login Failed");
             }}
           />
-          <Button type="secondary">Facebook</Button>
         </div>
       </form>
     </main>
