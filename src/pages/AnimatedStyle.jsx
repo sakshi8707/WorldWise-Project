@@ -1,9 +1,43 @@
 import styled from "styled-components";
 
+//icons
+
+
+export const SocialIcons = styled.div`
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  color : red;
+`;
+
+export const Icon = styled.a`
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  width: 40px;
+  height: 40px;
+  color: #ccc;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+    color: black;
+  }
+
+  i {
+    font-size: 20px;
+  }
+`;
+
+
 export const Container = styled.div`
   background-color: var(--color-dark--1);
   border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 14px 28px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
   overflow: hidden;
   width: 678px;
@@ -112,7 +146,7 @@ export const GhostButton = styled(Button)`
 `;
 
 export const Anchor = styled.a`
-  color: #333;
+  color: #ffffff;
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
